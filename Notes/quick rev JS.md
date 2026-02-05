@@ -127,7 +127,8 @@ console.log(sum);
 ```
 
    - `forEach()` → iterates over elements 
-## sort()   
+ 
+#### sort()   
 →  sorts the elements of an array in place and returns the reference to the same array
 **Default Behavior**
   - By default, `sort()` converts elements into strings and sorts them according to their UTF-16 code units values.
@@ -158,4 +159,37 @@ nums.sort((a, b) => b - a); // [80, 10, 5, 1]
 - `sort()` mutates the original array. In React, it is better to copy the array first to avoid side effects:
 ```js
 const sortedArray = [...originalArray].sort((a, b) => a - b);
+```
+
+## Asynchronous JS: Promises & Async/Awat
+### promise 
+ - A **Promise** is an object representing the eventual completion (or failure) of an asynchronous operation and its resulting value.
+  **States**:
+  • **Pending**: Initial state, neither fulfilled nor rejected.
+  • **Fulfilled**: Operation completed successfully.
+  • **Rejected**: Operation failed.
+  • **Consuming Promises:** We use `.then()` for success and `.catch()` for errors.
+  • **Example**:
+```js
+fetch('[suspicious link removed]')
+.then(res => res.json())
+.then(data => console.log(data))
+.catch(err => console.error(err));  
+```
+### **Async/Await**
+- **Async/Await** is syntactic sugar built on top of Promises. It makes asynchronous code look and behave more like synchronous code, making it easier to read and maintain.
+  • `async` keyword: Used to define a function that returns a promise.
+   • `await` keyword: Pauses the execution of the async function until the promise is settled (fulfilled or rejected).
+  • Error Handling: Uses `try...catch` blocks instead of `.catch()`.
+   • Example:
+```js
+async function getData() {
+  try {
+    const res = await fetch('[suspicious link removed]');
+    const data = await res.json();
+    console.log(data);
+  } catch (err) {
+    console.error(err);
+  }
+}
 ```
