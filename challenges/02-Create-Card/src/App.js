@@ -1,5 +1,37 @@
 import "./styles.css";
 
+const skills = [
+  {
+    skill: "HTML+CSS",
+    level: "advanced",
+    color: "#264de4",
+  },
+  {
+    skill: "JavaScript",
+    level: "advanced",
+    color: "#f7df1e",
+  },
+  {
+    skill: "Web Design",
+    level: "advanced",
+    color: "#C3DCAF",
+  },
+  {
+    skill: "Git and GitHub",
+    level: "intermediate",
+    color: "#E84E33",
+  },
+  {
+    skill: "React",
+    level: "beginner",
+    color: "#61DAFB",
+  },
+  {
+    skill: "Svelte",
+    level: "beginner",
+    color: "#FF3E00",
+  },
+];
 export default function App() {
   return (
     <div className="Card">
@@ -36,20 +68,17 @@ function Intro() {
 function Skillist() {
   return (
     <div className="Skillist">
-      <Skill name="Html + Css" emoji="✊" color="blue" />
-      <Skill name="JavaScript" emoji="✊" color="yellow" />
-      <Skill name="Web Design" emoji="✊" color="red" />
-      <Skill name="Git & GitHub" emoji="✊" color="#005472" />
-      <Skill name="React" emoji="✊" color="gray" />
-      <Skill name="programming" emoji="✊" color="#123547" />
+      {skills.map((S) => (
+        <Skill name={S.skill} color={S.color} level={S.level} />
+      ))}
     </div>
   );
 }
 
-function Skill(props) {
+function Skill({ name, color, level }) {
   return (
-    <span className="Skill" style={{ backgroundColor: props.color }}>
-      {props.name} {props.emoji}
+    <span className="Skill" style={{ backgroundColor: color }}>
+      {name} {(level = "advanced" ? "💪" : (level = "beginner" ? "👶" : "👍"))}
     </span>
   );
 }
