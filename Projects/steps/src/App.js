@@ -3,10 +3,17 @@ import { useState } from "react";
 const Messages = [" Learn React ⚛️", " Learn JavaScript 🍦", " Get a Job 💼"];
 
 export default function App() {
+  const [isopen, setisopen] = useState(true);
+
   return (
-    <div className="steps">
-      <Steps stepsnumber={3} />
-    </div>
+    <>
+      <div className="steps" style={isopen ? {} : { display: "none" }}>
+        <Steps stepsnumber={3} />
+      </div>
+      <div className="close" onClick={() => setisopen(prev => !prev)}>
+        x
+      </div>
+    </>
   );
 }
 
@@ -14,6 +21,12 @@ function Steps({ stepsnumber }) {
   const [step, setStep] = useState(1);
   const length = Messages.length;
 
+  function handlePrevious() {
+    return step > 1 && setStep((s) => s - 1);
+  }
+  function handleNext() {
+    return step < length && setStep((s) => s + 1);
+  }
   return (
     <>
       <div className="numbers">
@@ -37,14 +50,16 @@ function Steps({ stepsnumber }) {
 
       <div className="buttons">
         <button
-          onClick={() => step > 1 && setStep(step - 1)}
-          style={{ backgroundColor: "#7950f2", color: "white" }}
+          onClick={handlePrevious}
+          style={step > 1 ? { backgroundColor: "#7950f2", color: "white" } : {}}
         >
           <span>Previous</span>
         </button>
         <button
-          onClick={() => step < length && setStep(step + 1)}
-          style={{ backgroundColor: "#7950f2", color: "white" }}
+          onClick={handleNext}
+          style={
+            step < length ? { backgroundColor: "#7950f2", color: "white" } : {}
+          }
         >
           <span>Next</span>
         </button>
