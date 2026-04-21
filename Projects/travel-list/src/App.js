@@ -1,11 +1,8 @@
 import { useState } from "react";
 
 export default function App() {
-  const initialItems = [
-    { id: 1, description: "Passports", quantity: 2, packed: false },
-    { id: 2, description: "Socks", quantity: 12, packed: true },
-  ];
-  const [items, setItems] = useState(initialItems);
+
+  const [items, setItems] = useState([]);
   return (
     <div className="app">
       <Logo />
@@ -81,7 +78,7 @@ function PackingList({ items, setItems }) {
             Deletehandle={handleDelete}
             checkhandle={handlecheked}
           />
-        ))}
+        ))} 
       </ul>
     </div>
   );

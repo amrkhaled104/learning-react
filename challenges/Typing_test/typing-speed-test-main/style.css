@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Sora", sans-serif;
+  background-color: hsl(0, 0%, 7%);
+  color: #fff;
+  padding: 20px;
+  line-height: 1.5;
+}
+
+.container {
+  width: 100%;
+  max-width: 1110px;
+  margin: 0 auto;
+}
+
+/* --- Header Section --- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.logo {
+  background-image: url("./assets/images/logo-small.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 32px;
+  height: 32px;
+}
+
+.Best {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.Best .label {
+  color: hsl(240, 3%, 46%);
+}
+
+/* --- Analysis Section --- */
+.analysis {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stat {
+  text-align: center;
+  flex: 1;
+}
+
+.stat p {
+  color: hsl(240, 3%, 46%);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.stat span {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.Accuracy {
+  border-left: 1px solid hsl(240, 3%, 46%);
+  border-right: 1px solid hsl(240, 3%, 46%);
+}
+
+.select {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 10px 0 0 0;
+  gap: 20px;
+  max-width: 500px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid hsl(240, 3%, 46%);
+  position: relative;
+}
+.custom-select-wrapper {
+  position: relative;
+  width: 100%;
+}
+.select-button {
+  width: 100%;
+  background-color: hsl(0, 0%, 15%);
+  color: #fff;
+  border: 1px solid hsl(240, 3%, 46%);
+  padding: 5px 15px;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.arrow {
+  background-image: url("./assets/images/icon-down-arrow.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 10px;
+  height: 10px;
+  margin-left: 10px;
+}
+.select-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: hsl(0, 0%, 15%);
+  border: none;
+  border-radius: 8px;
+  margin-top: 5px;
+  z-index: 10;
+  list-style: none;
+  overflow: hidden;
+  /* display: none; */
+}
+.select-options li {
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.select-options li:not(:last-child) {
+  border-bottom: 1px solid hsl(240, 1%, 59%);
+}
+.select-options li input[type="radio"] {
+  margin-right: 10px;
+
+}
+
+/* --- Responsive Layout --- */
+@media (max-width: 600px) {
+}
