@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  color: #343a40;
+  line-height: 1;
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.TipCalucator {
+  margin: 40px auto;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  min-width: 450px;
+  border-radius: 10px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+}
+
+.input-group label {
+  font-weight: bold;
+  color: #333;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.input-group input,
+select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  font-family: inherit;
+  background-color: #fff;
+  width: 250px;
+  transition: all 0.3s ease;
+}
+
+.input-group input:focus,
+select:focus {
+  outline: none;
+  border-color: #7950f2;
+  box-shadow: 0 0 0 2px rgba(121, 80, 242, 0.2);
+}
+
+select:hover {
+  border-color: #7950f2;
+  cursor: pointer;
+}
+
+.btn-reset {
+  background-color: red;
+  padding: 8px 20px;
+  border-radius: 5px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  width: fit-content;
+  align-self: flex-start;
+  transition: all 0.2s;
+}
+
+.btn-reset:hover {
+  background-color: #f8f9fa;
+  transform: translateY(-1px);
+}
+
+.btn-reset:active {
+  transform: translateY(0);
+}
